@@ -1,0 +1,4 @@
+- Zrobic postacie i dobrze je przyciac aby kolizje dzialaly
+- gui z broniami (funkcje gui, typy gui (dialog lub div) )
+- koordynaty dla dwoch graczy
+- hp u dolu ekranu
