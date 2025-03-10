@@ -32,9 +32,32 @@ body {
     width: 60px;
     height: 60px;
     cursor: pointer;
+    margin: 10px 0 0 10px;
 }
 #settings-icon-dashed {
     width: 60px;
     height: 60px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+dialog {
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+#settings-title {
+    vertical-align: super;
+}
+#close-settings-menu-button {
+    width: 35px;
+    height: 35px;
+    margin-left: 2px;
+    border: 2px solid darkred;
+    border-radius: 18px;
+    background-color: red;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 5px;
     cursor: pointer;
 }

@@ -10,20 +10,32 @@
 
     <title>Fortnite 2D</title>
 
-    <link rel="icon" href="icon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 
     <dialog id="settings-menu">
-        <h1><button>x</button><img id="settings-icon-dashed" src="settings-dashed.png" alt="settings"> Settings</h1>
+
+        <h1>
+            <div>
+                <button id="close-settings-menu-button" onclick="toggleSettingsMenu('close')">x</button>
+            </div>
+            
+            <hr>
+
+            <img id="settings-icon-dashed" src="settings-dashed.png" alt="settings">
+            <span id="settings-title">Settings</span>
+        </h1>
+
         <hr>
+
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa possimus deserunt dignissimos! Omnis nesciunt earum repudiandae tempora facilis atque voluptates, est minus nam, rem sint neque non optio? Itaque, assumenda.</p>
     </dialog>
 
     <div id="game-board">
 
-        <div id="settings-icon-container" onclick="openSettingsMenu()">
+        <div id="settings-icon-container" onclick="toggleSettingsMenu('open')">
             <img id="settings-icon" src="settings.png" alt="settings">
         </div>
 
@@ -52,11 +64,12 @@
         </div>
 
         <div class="player2 player">
-            <div class="player-nickname"></div>
+            <div class="player-nickname">MyNick2</div>
             <img class="player-skin" src="player-example.png" alt="player">
         </div>
 
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

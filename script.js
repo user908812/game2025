@@ -21,8 +21,8 @@ const players = [player1.element, player2.element];
 
 window.addEventListener('DOMContentLoaded', () => {
     setPosAbsolute();
-    setDefaultPosition(player1);
-    setDefaultPosition(player2);
+    setDefaultPosition(player1, 0);
+    setDefaultPosition(player2, 100);
 });
 
 checkPlayerPosition();
@@ -34,8 +34,12 @@ ifIsColliding(player1.element, player2.element, () => {
 
 
 
-function openSettingsMenu() {
-    settingsMenu.showModal();
+function toggleSettingsMenu(action) {
+    if (action === 'open') {
+        settingsMenu.showModal();
+    } else if (action === 'close') {
+        settingsMenu.close();
+    }
 }
 
 function setPosAbsolute() {
@@ -43,9 +47,9 @@ function setPosAbsolute() {
     player2.element.style.position = 'absolute';
 }
 
-function setDefaultPosition(player) {
-    if (!player.element.style.left) player.element.style.left = "0px";
-    if (!player.element.style.top) player.element.style.top = "0px";
+function setDefaultPosition(player, posX) {
+    if (!player.element.style.left) player.element.style.left = `${posX}px`;
+    if (!player.element.style.top) player.element.style.top = innerHeight - 110 + "px";
 }
 
 function walk(player, direction, speed) {
