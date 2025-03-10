@@ -1,4 +1,5 @@
 const settingsMenu = document.getElementById('settings-menu');
+const mobileControlsCheck = document.getElementById('mobile-controls-check');
 
 const player1 = {
     element: document.querySelector(".player1"),
@@ -28,11 +29,26 @@ window.addEventListener('DOMContentLoaded', () => {
 checkPlayerPosition();
 
 ifIsColliding(player1.element, player2.element, () => {
-    console.log('Collision detected')
+    console.log('Collision detected');
 });
 
+update();
 
+function update() {
+    setInterval(() => {
+        if (mobileControlsCheck.checked) {
+            // TODO:
+        }
+    }, 0);
+}
 
+function setPlayerSkin(player, skin) {
+    if (player === 'player1') {
+        document.querySelector('.player-1-skin').src = skin;
+    } else if (player === 'player2') {
+        document.querySelector('.player-2-skin').src = skin;
+    }
+}
 
 function toggleSettingsMenu(action) {
     if (action === 'open') {
@@ -67,9 +83,11 @@ window.addEventListener("keydown", (e) => {
     switch (e.key) {
         case player1.keys.forward:
             walk(player1.element, 'forward', player1.speed);
+            setPlayerSkin('player1', 'player-example.png');
             break;
         case player1.keys.backwards:
             walk(player1.element, 'backwards', player1.speed);
+            setPlayerSkin('player1', 'skin2.png');
             break;
         case player2.keys.forward:
             walk(player2.element, 'forward', player2.speed);
